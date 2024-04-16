@@ -6,7 +6,8 @@ echo "Welcome to the XRay Deployment Initialization Script"
 echo "*******************************************************"
 
 # Attempt to install X-UI and fix missing dependencies
-sudo apt-get update  # Update package lists first
+sudo apt-get update  # Update package lists 
+sudo apt install certbot
 if ! sudo apt-get install -y x-ui; then
     echo "X-UI installation failed initially. Attempting to fix dependencies..."
     sudo apt-get install -f -y  # Attempt to fix dependencies
